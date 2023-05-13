@@ -1,4 +1,4 @@
-import { Color } from '../../Commons/Color/Color.config';
+import { Color } from '../../../Commons/Color/Color.config';
 
 interface Theme {
     primary : Color;

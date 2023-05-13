@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import { useTheme } from './Components/Theme/ThemeContext';
-import ThemeToggler from './Components/Theme/ThemeToggler';
+import { useTheme } from './Components/Context/Theme/ThemeContext';
+import ThemeToggler from './Components/Context/Theme/ThemeToggler';
 import NavBar from './Components/NavBar/NavBar';
 
 const AppStyle = (background) => ({

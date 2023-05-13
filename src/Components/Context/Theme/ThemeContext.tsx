@@ -1,7 +1,7 @@
 import React, { useState, createContext, SetStateAction, Dispatch, useContext, useEffect } from 'react';
 import { ThemeType, Theme } from './Theme.types';
 import { THEMES } from './Theme.config';
-import PropsWithChildren from '../../Commons/PropsWithChildren';
+import PropsWithChildren from '../../../Commons/PropsWithChildren';
 
 interface ThemeContextProps {
     themeType: ThemeType,

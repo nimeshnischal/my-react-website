@@ -1,4 +1,4 @@
-import { Color } from '../../Commons/Color/Color.config';
+import { Color } from '../../../Commons/Color/Color.config';
 import { Theme, ThemeType } from './Theme.types';
 
 const THEMES : Record<ThemeType, Theme> = {
