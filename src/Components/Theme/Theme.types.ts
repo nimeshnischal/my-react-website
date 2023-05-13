@@ -3,7 +3,8 @@ import { Color } from '../../Commons/Color/Color.config';
 interface Theme {
     primary : Color;
     secondary: Color;
-    background: Color;
+    primaryBackground: Color;
+    secondaryBackground: Color;
 }
 
 type ThemeType = string;

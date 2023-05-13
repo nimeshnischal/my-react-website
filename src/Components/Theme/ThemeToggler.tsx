@@ -5,16 +5,17 @@ import { THEMES } from './Theme.config';
 
 export default function ThemeToggler() {
     const { theme, themeType, setCurrentTheme } = useTheme();
-    const { secondary, background } = theme;
+    const { secondary, primaryBackground } = theme;
 
     const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setCurrentTheme && setCurrentTheme(e.target.value as ThemeType);
+        localStorage.setItem('theme', e.target.value);
     };
 
     return (
         <select
             onChange={onChange}
-            style={{ color: secondary, backgroundColor: background }}
+            style={{ color: secondary, backgroundColor: primaryBackground }}
         >
             {
                 Object.keys(THEMES).map((key) => {

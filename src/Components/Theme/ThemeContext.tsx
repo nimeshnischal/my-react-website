@@ -1,4 +1,4 @@
-import React, { useState, createContext, SetStateAction, Dispatch, useContext } from 'react';
+import React, { useState, createContext, SetStateAction, Dispatch, useContext, useEffect } from 'react';
 import { ThemeType, Theme } from './Theme.types';
 import { THEMES } from './Theme.config';
 import PropsWithChildren from '../../Commons/PropsWithChildren';
@@ -18,7 +18,17 @@ const ThemeContext = createContext<ThemeContextProps>({
 
 
 const ThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
-    const [theme, setCurrentTheme] = useState<ThemeType>("light");
+
+    const [theme, setCurrentTheme] = useState<ThemeType>('plain_light');
+
+    useEffect(() => {
+        const theme = localStorage.getItem('theme') as ThemeType;
+        if (theme && THEMES[theme]) {
+            setCurrentTheme(theme);
+            return;
+        }
+        localStorage.setItem('theme', 'plain_light');
+    }, []);
 
     return (
         <ThemeContext.Provider value={{
